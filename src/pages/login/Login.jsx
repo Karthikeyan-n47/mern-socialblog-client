@@ -28,7 +28,7 @@ export default function Login() {
       });
       // console.log(res);
       // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-      dispatch(loginSuccess(res.data));
+      dispatch(loginSuccess(res?.data));
       setError("");
     } catch (err) {
       // console.log(err);

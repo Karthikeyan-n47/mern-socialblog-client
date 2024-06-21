@@ -18,7 +18,7 @@ export default function Comments() {
     const getComments = async () => {
       try {
         const res = await axios.get(`/comments/${postId}`);
-        setComments(res.data);
+        setComments(res?.data);
         setError("");
       } catch (err) {
         setError(err.message);
@@ -30,7 +30,7 @@ export default function Comments() {
   const handleDelete = async (comment, i) => {
     try {
       await axios.delete(`/comments/${comment._id}`);
-      setComments(comments.map((c, index) => (index === i ? null : c)));
+      setComments(comments?.map((c, index) => (index === i ? null : c)));
       setError("");
       // window.location.reload();
     } catch (err) {
@@ -46,7 +46,7 @@ export default function Comments() {
       });
       setUpdateMode(false);
       setComments(
-        comments.map((c, index) => (index === i ? updatedComment.data : c))
+        comments?.map((c, index) => (index === i ? updatedComment.data : c))
       );
       setError("");
       // window.location.reload();
@@ -61,7 +61,7 @@ export default function Comments() {
       const createdComment = await axios.post(`/comments/${postId}`, {
         message: newComment,
       });
-      setComments([...comments, createdComment.data]);
+      setComments([...comments, createdComment?.data]);
       // setNewComment("");
       // window.location.reload();
       setError("");

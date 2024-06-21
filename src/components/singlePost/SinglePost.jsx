@@ -56,10 +56,10 @@ export default function SinglePost() {
       try {
         const res = await axios.get(`/posts/${location}`);
         const cat = await axios.get("/category");
-        setPost(res.data);
-        setTitle(res.data.title);
-        setDesc(res.data.desc);
-        setCategories(cat.data);
+        setPost(res?.data);
+        setTitle(res?.data?.title);
+        setDesc(res?.data?.desc);
+        setCategories(cat?.data);
         if (res?.data?.categories) {
           setSelCategory(
             res?.data?.categories?.map((ca) => {

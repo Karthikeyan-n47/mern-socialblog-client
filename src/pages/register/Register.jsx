@@ -18,7 +18,7 @@ export default function Register() {
         email,
         password,
       });
-      console.log(res.data);
+      console.log(res?.data);
       setError("");
       res.data && window.location.replace("/login");
     } catch (err) {

@@ -15,7 +15,7 @@ export default function SideBar() {
       try {
         const res = await axios.get("/category");
         // console.log(res);
-        setCategories(res.data);
+        setCategories(res?.data);
         setError("");
       } catch (err) {
         setError(err.message);

@@ -51,7 +51,7 @@ export default function Write() {
     const getCategories = async () => {
       try {
         const res = await axios.get("/category");
-        setCategories(res.data);
+        setCategories(res?.data);
         setError("");
       } catch (err) {
         setError(err.message);
@@ -73,7 +73,7 @@ export default function Write() {
         name: newCategory,
       });
       // console.log(res.data);
-      setCategories([...categories, res.data]);
+      setCategories([...categories, res?.data]);
       setCategoryCreateSuccessfull(true);
       setError("");
     } catch (err) {
@@ -98,7 +98,7 @@ export default function Write() {
     console.log(data);
     try {
       const res = await axios.post("/posts", data);
-      navigate(`/post/${res.data._id}`);
+      navigate(`/post/${res?.data?._id}`);
       // console.log(res);
     } catch (err) {
       // console.log(err);
