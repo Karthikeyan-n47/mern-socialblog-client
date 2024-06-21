@@ -3,7 +3,7 @@ import "./login.css";
 import { useState } from "react";
 import axios from "../../axios";
 // import { context } from "../../context/Context";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   loginFailure,
   loginStart,
@@ -15,7 +15,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   // const { dispatch, isFetching } = useContext(context);
-  const { loading } = useSelector((state) => state.user);
+  // const { loading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ export default function Login() {
     } catch (err) {
       // console.log(err);
       // dispatch({ type: "LOGIN_FAILURE" });
-      // dispatch(loginFailure(err.response.data));
+      dispatch(loginFailure(err.response.data));
       setError(err.message);
     }
   };
@@ -57,7 +57,7 @@ export default function Login() {
         <Link to={"/forgot-password"} className="link">
           <span className="loginForgotPassword"> Forgot Your Password?</span>
         </Link>
-        <button className="loginButton" type="submit" disabled={loading}>
+        <button className="loginButton" type="submit">
           Login
         </button>
         {error && <span className="loginError">Uh oh! {error}</span>}
