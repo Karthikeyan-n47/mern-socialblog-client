@@ -1,0 +1,254 @@
+.singlePost {
+  flex: 9;
+}
+.singlePostWrapper {
+  padding: 20px;
+  padding-right: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.singlePostImg {
+  width: 100%;
+  /* height: 300px; */
+  border-radius: 5px;
+  object-fit: cover;
+}
+.singlePostTitle {
+  text-align: center;
+  margin: 10px;
+  font-family: "Lora", serif;
+  font-size: 25px;
+}
+.singlePostTitleInput {
+  text-align: center;
+  margin: 10px;
+  font-family: "Lora", serif;
+  font-size: 25px;
+  border: none;
+  color: grey;
+  border-bottom: 2px solid lightgray;
+}
+.singlePostTitleInput:focus {
+  outline: none;
+}
+.singlePostEdit {
+  float: right;
+  font-size: 16px;
+}
+.singlePostIcon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.singlePostIcon:first-child {
+  color: teal;
+}
+.singlePostIcon:last-child {
+  color: tomato;
+}
+.singlePostInfo {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #b39656;
+  font-family: "Varela Round", sans-serif;
+}
+.singlePostDesc {
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+}
+.singlePostDesc::first-letter {
+  margin-left: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.singlePostDescInput {
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+}
+.singlePostDescInput:focus {
+  outline: none;
+}
+.singlePostButton {
+  width: 100px;
+  border: none;
+  background-color: teal;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+.singlePostCategoriesContainer {
+  display: flex;
+  width: calc(100% - 10px);
+  align-items: center;
+  /* flex-wrap: wrap; */
+  padding-left: 10px;
+  /* margin-left: 10px; */
+}
+.singlePostCategoriesTitle {
+  font-family: "Lora", serif;
+  font-size: 1.2rem;
+  color: #666;
+}
+.singlePostCategoriesSelect {
+  width: 100%;
+  padding-left: 20px;
+}
+.singlePostCategoriesContentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* margin: 10px 0; */
+}
+.singlePostCategoriesContent {
+  /* width: 20%; */
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(238, 238, 238);
+  font-family: "Lora", serif;
+  font-size: 1.2rem;
+  color: #666;
+}
+.singlePostCategoryCreate {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+.singlePostCategoryCreateTitle {
+  font-family: "Lora", serif;
+  font-size: 1.2rem;
+  color: #666;
+}
+.singlePostCategoryCreateInput {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 10px;
+  width: 60%;
+  margin-bottom: 10px;
+}
+.singlePostCategoryCreateButton {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+.updateError {
+  color: red;
+  text-align: center;
+  margin: 20px 0;
+}
+@media (max-width: 690px) {
+  .singlePostWrapper {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .singlePostTitle {
+    font-size: 1.5rem;
+  }
+  .singlePostTitleInput {
+    font-size: 1.2rem;
+  }
+  .singlePostCategoriesTitle,
+  .singlePostCategoryCreateTitle {
+    font-size: 14px;
+  }
+
+  .singlePostCategoryCreateInput {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .singlePostCategoryCreateButton {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .singlePost {
+    width: 100%;
+  }
+  .singlePostCategoriesTitle {
+    font-size: 1rem;
+  }
+  .singlePostCategoriesSelect {
+    font-size: 0.8rem;
+  }
+  .singlePostCategoriesContent {
+    font-size: 0.9rem;
+  }
+  .singlePostCategoryCreateInput {
+    font-size: 0.8rem;
+  }
+  .singlePostCategoryCreateButton {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .singlePostTitle {
+    font-size: 1.2rem;
+  }
+  .singlePostTitleInput {
+    font-size: 1rem;
+  }
+  .singlePostInfo {
+    font-size: 0.8rem;
+  }
+  .singlePostDescInput h2 {
+    font-size: 1.2rem;
+  }
+  .singlePostDescInput p {
+    font-size: 0.8rem;
+  }
+  .singlePostDescInput li {
+    font-size: 0.8rem;
+  }
+  .singlePostDesc h2 {
+    font-size: 1.2rem;
+  }
+  .singlePostDesc p {
+    font-size: 0.8rem;
+  }
+  .singlePostDesc li {
+    font-size: 0.8rem;
+  }
+  .singlePostCategoriesTitle {
+    font-size: 1rem;
+  }
+  .singlePostCategoriesContent {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 350px) {
+  .singlePostCategoriesContent {
+    font-size: 0.6rem;
+  }
+  .singlePostCategoriesSelect {
+    font-size: 0.6rem;
+  }
+  .singlePostCategoryCreateInput {
+    font-size: 0.6rem;
+  }
+  .singlePostCategoryCreateButton {
+    font-size: 0.6rem;
+  }
+}
