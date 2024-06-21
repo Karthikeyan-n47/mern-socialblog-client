@@ -33,7 +33,7 @@ export default function Login() {
     } catch (err) {
       // console.log(err);
       // dispatch({ type: "LOGIN_FAILURE" });
-      dispatch(loginFailure(err.response.data));
+      // dispatch(loginFailure(err.response.data));
       setError(err.message);
     }
   };
