@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://mern-socialblog.onrender.com/api",
+  baseURL: "https://mern-socialblog-api.vercel.app/api",
   withCredentials: true,
 });
 
