@@ -23,7 +23,11 @@ export default function Contact() {
       navigate("/");
     } catch (err) {
       // console.log(err);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
 

@@ -18,7 +18,11 @@ export default function Home() {
         setPosts(res?.data);
         setError("");
       } catch (err) {
-        setError(err.message);
+        if (err.response) {
+          setError(err?.response?.data);
+        } else {
+          setError("Something went wrong! Please try again!");
+        }
       }
     };
     fetchPosts();

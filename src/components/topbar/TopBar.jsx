@@ -28,7 +28,11 @@ export default function TopBar() {
     } catch (err) {
       // console.log(err.message);
       dispatch(logoutFailure(err.message));
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
 

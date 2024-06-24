@@ -54,7 +54,11 @@ export default function Write() {
         setCategories(res?.data);
         setError("");
       } catch (err) {
-        setError(err.message);
+        if (err.response) {
+          setError(err?.response?.data);
+        } else {
+          setError("Something went wrong! Please try again!");
+        }
       }
     };
     getCategories();
@@ -78,7 +82,11 @@ export default function Write() {
       setError("");
     } catch (err) {
       // console.log(err);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
       setCategoryCreateSuccessfull(false);
     }
   };
@@ -102,7 +110,11 @@ export default function Write() {
       // console.log(res);
     } catch (err) {
       // console.log(err);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
       setCategoryCreateSuccessfull(false);
     }
   };

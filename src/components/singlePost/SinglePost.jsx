@@ -69,7 +69,11 @@ export default function SinglePost() {
         }
         setError("");
       } catch (err) {
-        setError(err.message);
+        if (err.response) {
+          setError(err?.response?.data);
+        } else {
+          setError("Something went wrong! Please try again!");
+        }
       }
     };
     fetchPost();
@@ -91,7 +95,11 @@ export default function SinglePost() {
       setCategories([...categories, res?.data]);
       setError("");
     } catch (err) {
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
 
@@ -102,7 +110,11 @@ export default function SinglePost() {
       navigate("/");
     } catch (err) {
       // console.log(err);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   const handleUpdate = async () => {
@@ -130,7 +142,11 @@ export default function SinglePost() {
       // window.location.reload();
     } catch (err) {
       // console.log(err);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   const options = categories?.map((cat) => {

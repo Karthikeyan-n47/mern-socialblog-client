@@ -53,7 +53,11 @@ export default function Settings() {
       // console.log(err);
       // dispatch({ type: "UPDATE_FAILURE" });
       dispatch(updateUserFailure(err.message));
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
       setUpdateSuccessfull(false);
     }
   };
@@ -68,7 +72,11 @@ export default function Settings() {
     } catch (err) {
       // console.log(err.message);
       dispatch(deleteUserFailure(err.message));
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   return (

@@ -22,7 +22,11 @@ export default function Register() {
       setError("");
       res.data && window.location.replace("/login");
     } catch (err) {
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
       // console.log(err);
     }
   };

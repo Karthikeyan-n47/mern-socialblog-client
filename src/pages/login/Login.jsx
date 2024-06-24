@@ -34,7 +34,11 @@ export default function Login() {
       // console.log(err);
       // dispatch({ type: "LOGIN_FAILURE" });
       dispatch(loginFailure(err.response.data));
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
 

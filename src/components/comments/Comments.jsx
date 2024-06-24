@@ -21,7 +21,12 @@ export default function Comments() {
         setComments(res?.data);
         setError("");
       } catch (err) {
-        setError(err.message);
+        if (err.response) {
+          setError(err?.response?.data);
+        } else {
+          setError("Something went wrong! Please try again!");
+        }
+
         // console.log(err.message);
       }
     };
@@ -35,7 +40,11 @@ export default function Comments() {
       // window.location.reload();
     } catch (err) {
       // console.log(err.message);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   const handleUpdate = async (comment, e, i) => {
@@ -52,7 +61,11 @@ export default function Comments() {
       // window.location.reload();
     } catch (err) {
       // console.log(err.message);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   const handleCreate = async (e) => {
@@ -67,7 +80,11 @@ export default function Comments() {
       setError("");
     } catch (err) {
       // console.log(err.message);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   return (

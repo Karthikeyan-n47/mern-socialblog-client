@@ -24,7 +24,11 @@ export default function ResetPassword() {
       navigate("/login");
     } catch (err) {
       // console.log(err.message);
-      setError(err.message);
+      if (err.response) {
+        setError(err?.response?.data);
+      } else {
+        setError("Something went wrong! Please try again!");
+      }
     }
   };
   return (
